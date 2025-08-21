@@ -64,23 +64,23 @@ So nutzt du die Matrix:
 2. Mit Gewicht multiplizieren → Teilscore.
 3. Alle Teilscoren summieren → Gesamtscore.
 4. Interpretation siehe Schwellen.
-> Tipp: Passe Gewichte an eure Realität an (z. B. Autonomie höher gewichten).
+> Tipp: Passt Gewichtung an eure Realität an (z. B. Autonomie höher gewichten).
 
 
-| # | Kriterium | Leitfrage | Gewicht | Bewertung (0–5) | Teilscore |
-|---|---|---|---:|---:|---:|
-| 1 | Team-Autonomie | Brauchen Teams unabhängige Releases? | 3 |  |  |
-| 2 | Domänenschnitt | Sind Bounded Contexts klar & stabil? | 3 |  |  |
-| 3 | Lieferengpass | Leiden Time-to-Market & Koordination heute? | 3 |  |  |
-| 4 | Skalierung | Viele Devs/Streams parallel (≥ 2 Teams)? | 2 |  |  |
-| 5 | Migration | Müssen wir schrittweise modernisieren? | 2 |  |  |
-| 6 | Heterogener Stack | Benötigen wir Framework-/Version-Freiheit? | 1 |  |  |
-| 7 | Performance-Budget | Können wir extra Overhead tragen/optimieren? | 2 |  |  |
-| 8 | DevOps-Reife | CI/CD, Observability, Security vorhanden? | 2 |  |  |
-| 9 | UX-Governance | Design System + App-Shell etabliert? | 2 |  |  |
-|10 | Abhängigkeiten | Geringe Cross-Domain Kopplung erreichbar? | 2 |  |  |
-|11 | Compliance | Trennung/Audit pro Domäne gefordert? | 1 |  |  |
-|12 | Organisation | Produkt- und Budget-Ownership je Domäne? | 2 |  |  |
+| #  | Kriterium          | Leitfrage                                    | Gewicht | Bewertung (0–5) | Teilscore |
+|----|--------------------|----------------------------------------------|--------:|----------------:|----------:|
+| 1  | Team-Autonomie     | Brauchen Teams unabhängige Releases?         |       3 |                 |           |
+| 2  | Domänenschnitt     | Sind Bounded Contexts klar & stabil?         |       3 |                 |           |
+| 3  | Lieferengpass      | Leiden Time-to-Market & Koordination heute?  |       3 |                 |           |
+| 4  | Skalierung         | Viele Devs/Streams parallel (≥ 2 Teams)?     |       2 |                 |           |
+| 5  | Migration          | Müssen wir schrittweise modernisieren?       |       2 |                 |           |
+| 6  | Heterogener Stack  | Benötigen wir Framework-/Version-Freiheit?   |       1 |                 |           |
+| 7  | Performance-Budget | Können wir extra Overhead tragen/optimieren? |       2 |                 |           |
+| 8  | DevOps-Reife       | CI/CD, Observability, Security vorhanden?    |       2 |                 |           |
+| 9  | UX-Governance      | Design System + App-Shell etabliert?         |       2 |                 |           |
+| 10 | Abhängigkeiten     | Geringe Cross-Domain Kopplung erreichbar?    |       2 |                 |           |
+| 11 | Compliance         | Trennung/Audit pro Domäne gefordert?         |       1 |                 |           |
+| 12 | Organisation       | Produkt- und Budget-Ownership je Domäne?     |       2 |                 |           |
 
 **Gesamtscore = Σ (Bewertung × Gewicht)**:
 
