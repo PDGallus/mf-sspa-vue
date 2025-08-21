@@ -1,0 +1,23 @@
+{
+  "name": "single-spa-demo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "pnpm run build && concurrently -n remotes,root,style -c blue,green,magenta \"pnpm run serve:remotes\" \"pnpm run start:root\" \"pnpm run start:style\"",
+    "build": "pnpm run build:remotes",
+    "serve": "pnpm run serve:remotes",
+    "restart": "pnpm stop & pnpm build & pnpm serve",
+    "start:root": "pnpm --filter \"./root-config\" start",
+    "start:style": "pnpm --filter \"./styleguide\" dev",
+    "build:remotes": "pnpm --parallel --filter \"./dogs-dashboard\" --filter \"./rate-dogs\" --filter \"./navbar\" build",
+    "serve:remotes": "pnpm --parallel --filter \"./dogs-dashboard\" --filter \"./rate-dogs\" --filter \"./navbar\" serve",
+    "dev:hosts": "pnpm --filter \"./team-red\" dev",
+    "stop": "kill-port --port 9000,8080,8081,8090,8100",
+    "clean": "pnpm run clean"
+  },
+  "license": "MulanPSL2",
+  "devDependencies": {
+    "concurrently": "9.2.0",
+    "kill-port": "2.0.1"
+  }
+}

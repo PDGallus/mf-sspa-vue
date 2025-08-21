@@ -1,0 +1,6 @@
+packages:
+  - dogs-dashboard
+  - navbar
+  - rate-dogs
+  - root-config
+  - styleguide
