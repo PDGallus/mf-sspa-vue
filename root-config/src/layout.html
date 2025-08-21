@@ -1,0 +1,15 @@
+<single-spa-router>
+    <div id="global-structure">
+        <header>
+           <application name="@vue-mf/navbar"></application>
+        </header>
+        <main>
+            <route default>
+                <application name="@vue-mf/dogs-dashboard"></application>
+            </route>
+            <route path="rate">
+                <application name="@vue-mf/rate-dogs"></application>
+            </route>
+        </main>
+    </div>
+</single-spa-router>

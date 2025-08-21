@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <link rel="preload" href="cdn/vue.runtime.global.prod.min.js" as="script" crossorigin="anonymous" />
+    <link rel="preload" href="cdn/vue-router.global.prod.min.js" as="script" crossorigin="anonymous" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MicroFrontend Example</title>
+    <meta name="import-map-type" content="systemjs-importmap" />
+    <script type="text/javascript" src="cdn/import-map-overrides.min.js"></script>
+    <script src="cdn/system.min.js"></script>
+    <script src="cdn/single-spa-vue.min.js"></script>
+    <link rel="stylesheet" href="dist/styles.css" />
+</head>
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script type="module" src="/src/main.ts"></script>
+    <script>
+        System.import('@vue-mf/styleguide');
+    </script>
+</body>
+</html>

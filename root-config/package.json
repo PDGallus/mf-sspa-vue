@@ -1,0 +1,26 @@
+{
+  "name": "root-config",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:local": "vite build --watch",
+    "start": "pnpm run build && pnpm run preview",
+    "preview": " vite preview",
+    "eslint": "eslint src --fix"
+  },
+  "devDependencies": {
+    "@types/systemjs": "6.15.3",
+    "globals": "16.3.0",
+    "ts-config-single-spa": "3.0.0",
+    "typescript": "5.9.2",
+    "typescript-eslint": "8.40.0",
+    "vite": "7.1.3",
+    "vite-plugin-single-spa": "1.1.0",
+    "vite-plugin-static-copy": "3.1.2"
+  },
+  "dependencies": {
+    "single-spa": "6.0.3",
+    "single-spa-layout": "3.0.0"
+  }
+}

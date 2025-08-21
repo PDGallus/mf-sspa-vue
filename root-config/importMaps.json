@@ -1,0 +1,12 @@
+{
+  "imports": {
+    "@vue-mf/navbar": "http://localhost:8080/main-app.js",
+    "@vue-mf/dogs-dashboard": "http://localhost:8081/main-app.js",
+    "@vue-mf/rate-dogs": "http://localhost:8090/main-app.js",
+    "@vue-mf/styleguide": "http://localhost:8100/style-guide.js",
+    "single-spa": "./cdn/single-spa.min.js",
+    "single-spa-vue": "./cdn/single-spa-vue.min.js",
+    "vue": "./cdn/vue.min.js",
+    "vue-router": "./cdn/vue-router.min.js"
+  }
+}

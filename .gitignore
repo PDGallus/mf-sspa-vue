@@ -1,0 +1,6 @@
+/.idea/
+/node_modules/
+/dogs-dashboard/dist/
+/dogs-dashboard/node_modules/
+/rate-dogs/node_modules/
+/root-config/node_modules/
