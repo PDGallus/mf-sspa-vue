@@ -12,6 +12,7 @@
     "build:remotes": "pnpm --parallel --filter \"./dogs-dashboard\" --filter \"./rate-dogs\" --filter \"./navbar\" build",
     "serve:remotes": "pnpm --parallel --filter \"./dogs-dashboard\" --filter \"./rate-dogs\" --filter \"./navbar\" serve",
     "dev:hosts": "pnpm --filter \"./team-red\" dev",
+    "format:eslint": "eslint \"{root-config,dogs-dashboard,rate-dogs,navbar,styleguide}/**/*.{ts,vue}\" --fix",
     "stop": "kill-port --port 9000,8080,8081,8090,8100",
     "clean": "pnpm run clean",
     "prepare": "husky"
@@ -22,9 +23,12 @@
     "concurrently": "9.2.0",
     "eslint": "9.33.0",
     "eslint-plugin-vue": "10.4.0",
+    "globals": "16.3.0",
     "husky": "9.1.7",
     "kill-port": "2.0.1",
     "lint-staged": "16.1.5",
-    "prettier": "3.6.2"
+    "prettier": "3.6.2",
+    "typescript-eslint": "8.40.0",
+    "vue-eslint-parser": "10.2.0"
   }
 }

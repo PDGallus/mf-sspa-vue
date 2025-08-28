@@ -5,6 +5,7 @@
 </template>
 
 <script setup lang="ts">
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 defineProps<{
   title: string;
 }>();

@@ -4,7 +4,7 @@
     <div class="card">
       <div v-if="dogs.length === 0">
         There are no dogs!
-        <router-link to="/rate-doggos">Rate dogs</router-link>.
+        <router-link to="/rate-doggos"> Rate dogs </router-link>.
       </div>
       <div
         v-else
@@ -29,6 +29,7 @@
 <script setup lang="ts">
 import { ref, onMounted, defineAsyncComponent } from 'vue';
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const PageHeader = defineAsyncComponent(async () => {
   const mod = await System.import('@vue-mf/styleguide'); // Name muss in der import map vorkommen
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return

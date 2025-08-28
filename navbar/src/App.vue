@@ -45,7 +45,12 @@
       <div>
         <ul>
           <li>
-            <a class="nav-link" :href="githubLink"> Code / Documentation </a>
+            <a
+              class="nav-link"
+              :href="githubLink"
+            >
+              Code / Documentation
+            </a>
           </li>
         </ul>
       </div>
@@ -54,18 +59,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed } from 'vue';
 
-const _githubLink = ref<string>(
-  "https://github.com/vue-microfrontends/root-config",
-);
+const _githubLink = ref<string>('https://github.com/vue-microfrontends/root-config');
 const githubLink = computed(() => _githubLink.value);
 
 function isActive(path: string): boolean {
   try {
-    return (
-      typeof window !== "undefined" && window.location.pathname.startsWith(path)
-    );
+    return typeof window !== 'undefined' && window.location.pathname.startsWith(path);
   } catch {
     return false;
   }

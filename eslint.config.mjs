@@ -3,8 +3,8 @@ import tsEsLint from 'typescript-eslint';
 import pluginVue from 'eslint-plugin-vue';
 import vueParser from 'vue-eslint-parser';
 
-const tsFiles = ['src/**/*.ts'];
-const vueFiles = ['src/**/*.vue'];
+const tsFiles = ['**/src/**/*.ts'];
+const vueFiles = ['**/src/**/*.vue'];
 const languageOptions = { globals: { ...globals.browser }, ecmaVersion: 'latest', sourceType: 'module' };
 
 const customTypescriptConfig = {
@@ -67,7 +67,7 @@ const vueRules = {
 
 export default tsEsLint.config(
   {
-    ignores: ['**/*.{test,d}.ts', '**/*.css', '**/vite.config.ts'],
+    ignores: ['**/*.{test,d}.ts', '**/*.css', '**/vite.config.ts', '**/src/assets/**/*'],
   },
   ...recommendedTypeScriptConfigs,
   customTypescriptConfig,

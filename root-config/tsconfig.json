@@ -15,7 +15,8 @@
     "moduleResolution": "bundler",
     "module": "esnext",
     "noEmit": true,
-    "lib": ["esnext", "dom", "dom.iterable"]
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "types": ["vite/client", "systemjs"]
   },
   "include": [
     "src/**/*"

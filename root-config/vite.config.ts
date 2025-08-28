@@ -14,7 +14,7 @@ export default defineConfig({
         dev: ['./importMaps.json'],
         build: ['./importMaps.json'],
       },
-      imo: '6.1.0',
+      imo: () => './cdn/import-map-overrides.js',
       imoUi: {
         buttonPos: 'bottom-right',
         localStorageKey: 'devtools',
