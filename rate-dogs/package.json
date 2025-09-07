@@ -1,34 +1,33 @@
 {
-  "name": "vue-mf-rate-dogs",
-  "type": "module",
+  "name": "angular-rate-dogs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vite build && npm run dev:concurrently",
-    "dev:concurrently": "concurrently --kill-others \"npm run build:local\" \"npm run serve\"",
-    "build": "npm run type-check && vite build",
-    "build:local": "vite build --watch --mode dev",
-    "type-check": "vue-tsc --noEmit",
-    "serve": "vite preview",
-    "eslint": "eslint src/** --fix"
+    "start": "ng serve --port 8090 --host 0.0.0.0",
+    "serve": "ng serve --port 8090 --host 0.0.0.0",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "eslint .",
+    "type-check": "tsc -p tsconfig.app.json --noEmit"
   },
   "dependencies": {
-    "single-spa-vue": "3.0.1",
-    "vue": "3.5.18",
-    "vue-router": "4.5.1"
+    "@angular/animations": "20.2.0",
+    "@angular/common": "20.2.0",
+    "@angular/compiler": "20.2.0",
+    "@angular/core": "20.2.0",
+    "@angular/forms": "20.2.0",
+    "@angular/platform-browser": "20.2.0",
+    "@angular/platform-browser-dynamic": "20.2.0",
+    "rxjs": "7.8.1",
+    "tslib": "2.8.1",
+    "zone.js": "0.14.10"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "20.2.0",
+    "@angular/cli": "20.2.0",
+    "@angular/compiler-cli": "20.2.0",
     "@types/node": "22.15.35",
-    "@types/systemjs": "6.15.3",
-    "@vitejs/plugin-vue": "6.0.1",
-    "@vue/test-utils": "2.4.6",
-    "concurrently": "9.2.0",
-    "globals": "16.3.0",
-    "postcss-nesting": "13.0.2",
-    "typescript": "5.9.2",
-    "typescript-eslint": "8.40.0",
-    "vite": "7.1.2",
-    "vue-eslint-parser": "10.2.0",
-    "vue-tsc": "3.0.5"
+    "eslint": "9.33.0",
+    "typescript": "5.8.3"
   }
 }
