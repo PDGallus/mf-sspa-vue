@@ -1,7 +1,7 @@
-import path from "node:path";
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import postcssNesting from "postcss-nesting";
+import path from 'node:path';
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import postcssNesting from 'postcss-nesting';
 export default defineConfig({
   css: {
     postcss: {
@@ -12,14 +12,13 @@ export default defineConfig({
     emptyOutDir: false,
     rollupOptions: {
       input: {
-        main: "./src/main.ts",
+        main: './src/main.ts',
       },
-      preserveEntrySignatures: "strict",
+      preserveEntrySignatures: 'strict',
       output: {
-        format: "system",
-        entryFileNames: "[name]-app.js",
+        format: 'esm',
+        entryFileNames: '[name].js',
       },
-      external: ["single-spa-vue", "@vue-mf/styleguide"],
     },
   },
   experimental: {
@@ -28,7 +27,7 @@ export default defineConfig({
     },
   },
   plugins: [vue()],
-  base: "./",
+  base: './',
   preview: {
     port: 8080,
     cors: true,
@@ -38,7 +37,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      '@': path.resolve(__dirname, 'src'),
     },
   },
 });

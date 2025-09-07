@@ -15,7 +15,7 @@ export default defineConfig({
       },
       preserveEntrySignatures: 'strict',
       output: {
-        format: 'system',
+        format: 'esm',
         entryFileNames: 'style-guide.js',
       },
     },

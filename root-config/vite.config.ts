@@ -10,7 +10,7 @@ export default defineConfig({
     vitePluginSingleSpa({
       type: 'root',
       importMaps: {
-        type: 'systemjs-importmap',
+        type: 'importmap',
         dev: ['./importMaps.json'],
         build: ['./importMaps.json'],
       },

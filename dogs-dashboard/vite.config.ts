@@ -16,10 +16,9 @@ export default defineConfig({
       },
       preserveEntrySignatures: 'strict',
       output: {
-        format: 'system',
-        entryFileNames: '[name]-app.js',
+        format: 'esm',
+        entryFileNames: '[name].js',
       },
-      external: ['single-spa-vue', '@vue-mf/styleguide'],
     },
   },
   experimental: {
