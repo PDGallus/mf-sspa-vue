@@ -13,5 +13,5 @@ How to build:
 
 Notes:
 - This app is no longer a single-spa microfrontend and will not be mounted via root-config/import maps.
-- Running zoneless: Zone.js was removed and the Angular app uses signal-based change detection without zones. If you add libraries depending on NgZone/Zone.js, you may need to refactor them or re-add Zone.js.
+- Running zoneless: Zone.js was removed and the Angular app explicitly opts into zoneless change detection using provideZonelessChangeDetection(). This prevents NG0908 even if Zone.js is present globally from other microfrontends. If you add libraries depending on NgZone/Zone.js, you may need to refactor them or re-add Zone.js.
 - If the rest of the system still uses single-spa, the root-config reference to @vue-mf/rate-dogs should be removed or adjusted accordingly.
