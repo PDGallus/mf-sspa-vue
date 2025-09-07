@@ -9,16 +9,23 @@ const routes = constructRoutes(layout, {
   loaders: {},
   props: {},
 });
+
 const applications = constructApplications({
   routes,
-  loadApp: async ({ name }) => await System.import(name),
+  // Use native dynamic import with import maps. No SystemJS.
+  loadApp: async ({ name }): Promise<unknown> => import(/* @vite-ignore */ name),
 });
+
 applications.forEach(registerApplication);
+
 addErrorHandler((error) => {
+  // With native ESM, modules cannot be unloaded. If a load error occurs,
+  // we log it and let single-spa retry per its internal backoff or user action.
   if (getAppStatus(error.appOrParcelName) === LOAD_ERROR) {
-    System.delete(System.resolve(error.appOrParcelName));
+    console.error('Load error for app:', error.appOrParcelName, error);
   }
 });
+
 start();
 const layoutEngine = constructLayoutEngine({ routes, applications });
 layoutEngine.activate();

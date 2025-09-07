@@ -29,11 +29,12 @@
 <script setup lang="ts">
 import { ref, onMounted, defineAsyncComponent } from 'vue';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-const PageHeader = defineAsyncComponent(async () => {
-  const mod = await System.import('@vue-mf/styleguide'); // Name muss in der import map vorkommen
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  return mod.PageHeader; // benannter Export aus dem Styleguide
+import type { Component } from 'vue';
+
+type StyleguideMod = { PageHeader: Component };
+const PageHeader = defineAsyncComponent<Component>(async () => {
+  const mod: StyleguideMod = (await import(/* @vite-ignore */ '@vue-mf/styleguide')) as StyleguideMod;
+  return mod.PageHeader;
 });
 
 type Dog = { url: string; rating: number };
