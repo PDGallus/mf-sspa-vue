@@ -10,6 +10,10 @@ const routes = constructRoutes(layout, {
   props: {},
 });
 
+// Eagerly load the styleguide to apply its global.css (fonts, variables, body background)
+// We use native import() + import maps; vite-ignore prevents pre-bundling this bare specifier.
+void import(/* @vite-ignore */ '@vue-mf/styleguide');
+
 const applications = constructApplications({
   routes,
   // Use native dynamic import with import maps. No SystemJS.

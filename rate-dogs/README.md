@@ -12,6 +12,20 @@ How to build:
   - Output in rate-dogs/dist
 
 Notes:
-- This app is no longer a single-spa microfrontend and will not be mounted via root-config/import maps.
-- Running zoneless: Zone.js was removed and the Angular app explicitly opts into zoneless change detection using provideZonelessChangeDetection(). This prevents NG0908 even if Zone.js is present globally from other microfrontends. If you add libraries depending on NgZone/Zone.js, you may need to refactor them or re-add Zone.js.
-- If the rest of the system still uses single-spa, the root-config reference to @vue-mf/rate-dogs should be removed or adjusted accordingly.
+- Running zoneless: Zone.js is not used. The Angular app explicitly opts into zoneless change detection using provideZonelessChangeDetection() in src/main.ts and uses ngZone: 'noop' in the single-spa entry.
+- To run as a single-spa microfrontend with native ESM + import maps:
+  - Dev: pnpm --filter "./rate-dogs" serve:mfe (serves on http://localhost:8090)
+  - Build: pnpm --filter "./rate-dogs" build:mfe (outputs to rate-dogs/dist)
+  - In root-config import map, add an import pointing to the built file without hashing, e.g.:
+    {
+      "imports": {
+        "@org/ng20-mfe": "http://localhost:8090/main.single-spa.js"
+      }
+    }
+  - And register in root-config:
+    registerApplication({
+      name: '@org/ng20-mfe',
+      app: () => import('@org/ng20-mfe'),
+      activeWhen: (loc) => loc.pathname.startsWith('/ng20'),
+      customProps: { baseHref: '/ng20' }
+    });

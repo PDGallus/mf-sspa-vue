@@ -5,6 +5,9 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 export default defineConfig({
   build: {
     target: 'esnext',
+    rollupOptions: {
+      external: ['@vue-mf/styleguide'],
+    },
   },
   plugins: [
     vitePluginSingleSpa({

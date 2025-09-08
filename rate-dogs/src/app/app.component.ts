@@ -9,8 +9,9 @@ import { CommonModule } from '@angular/common';
     `
       :host {
         display: block;
-        margin-left: var(--navbar-width, 0);
         padding: 16px;
+        height: 100vh;
+        width: 100%;
       }
       .content {
         display: flex;
@@ -68,7 +69,7 @@ import { CommonModule } from '@angular/common';
     </div>
   `,
 })
-export class AppComponent {
+export default class AppComponent {
   currentDogUrl = signal<string | null>(null);
   rating = signal<string>('10');
 

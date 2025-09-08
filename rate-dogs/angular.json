@@ -26,6 +26,10 @@
               "optimization": true,
               "extractLicenses": true,
               "outputHashing": "all"
+            },
+            "single-spa": {
+              "browser": "src/main.single-spa.ts",
+              "outputHashing": "none"
             }
           }
         },
@@ -40,6 +44,9 @@
             },
             "development": {
               "buildTarget": "rate-dogs:build"
+            },
+            "single-spa": {
+              "buildTarget": "rate-dogs:build:single-spa"
             }
           },
           "defaultConfiguration": "development"

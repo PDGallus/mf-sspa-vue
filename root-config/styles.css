@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  #global-structure {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: 100vh;
+  }
+}

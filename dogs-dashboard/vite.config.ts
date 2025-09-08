@@ -2,6 +2,7 @@ import path from 'node:path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import postcssNesting from 'postcss-nesting';
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 export default defineConfig({
   css: {
     postcss: {
@@ -19,6 +20,7 @@ export default defineConfig({
         format: 'esm',
         entryFileNames: '[name].js',
       },
+      external: ['@vue-mf/styleguide'],
     },
   },
   experimental: {
@@ -26,7 +28,7 @@ export default defineConfig({
       return { relative: true };
     },
   },
-  plugins: [vue()],
+  plugins: [cssInjectedByJsPlugin(), vue()],
   base: './',
   preview: {
     port: 8081,

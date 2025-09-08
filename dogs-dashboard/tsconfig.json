@@ -18,11 +18,13 @@
     },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
-  "include": ["src/**/*.ts",
+  "include": [
+    "src/**/*.ts",
     "src/**/*.vue",
+    "src/**/*.d.ts",
     "vite.config.ts"
   ],
-  "exclude": ["../dogs-dashboard/node_modules",
-    "src/**/*.d.ts"
+  "exclude": [
+    "../dogs-dashboard/node_modules"
   ]
 }
